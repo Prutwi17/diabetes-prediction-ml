@@ -1,0 +1,33 @@
+<!-- templates/reset_email.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .email-container {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            border: 1px solid #dddddd;
+        }
+        a.button {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <p>Hi,</p>
+        <p>You requested a password reset. Click the button below to reset your password:</p>
+        <a class="button" href="{{ reset_url }}">Reset Password</a>
+        <p>If you didn't request this, please ignore this email.</p>
+        <p>Thanks,<br>Your App Team</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction Professional</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (Fixed) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Animate.css for entry animations -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+
+
+
+
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #f7f9fc;
+            color: #333;
+            padding-top: 1rem;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color:#3391C0 ;
+        }
+        .navbar .nav-link {
+            font-weight: 700;
+            color: #2d6a4f;
+            margin-right: 15px;
+        }
+        .navbar .nav-link:hover {
+            color: #3391C0;
+        }
+        .btn-signin {
+            background: #2d6a4f;
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-signin:hover {
+            background: #1b4332;
+        }
+        .hero {
+            background-image: url(static/bg-image3.png);
+            background-size: cover;
+         background-repeat: no-repeat;
+         padding-top: 135px;
+         background-position: center;
+         padding-bottom: 288px;
+         text-align:left;
+     
+        }
+        .hero1 {
+            text-align:left;
+            padding-top: 70px;
+            
+        }
+
+        .hero1_subtitle {
+            font-size:30px;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+        }
+        .btn-custom {
+            background: #ffcc00;
+            color: #000;
+            padding: 14px 36px;
+            font-size: 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .section {
+            padding: 137px 0;
+        }
+        .btn-primary{
+            background-color: #3391C0;
+        }
+        .feature-card {
+            border: none;
+            background: #ffffff;
+            box-shadow: 0 6px 30px rgba(0,0,0,0.08);
+            border-radius: 20px;
+            padding: 30px;
+            transition: 0.4s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .container1{
+            padding-top: 50px;
+        }
+        .section h2 {
+            font-weight: 700;
+        }
+        footer {
+            background: linear-gradient(to right, #3391C0, #40916c);
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+        }
+        .icon {
+            font-size: 2rem;
+            color: #2d6a4f;
+            margin-bottom: 15px;
+        }
+        .icon {
+    font-size: 2rem;
+    color: #2d6a4f;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Diabetes Pro</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#predict">Predict</a></li>
+                <li class="nav-item"><a class="nav-link" href="#diet">Diet Plan</a></li>
+                <li class="nav-item"><a class="nav-link" href="#exercise">Exercise</a></li>
+                <li class="nav-item"><a class="nav-link" href="#awareness">Awareness</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item">
+                    <a class="btn btn-signin ms-3" href="/signin">Sign In</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero1">
+            <h2 class="hero1_subtitle">
+                Welcome To Diabetics Pro
+            </h2>
+            <h1>Professional Diabetes Prediction</h1>
+            <p>Accurate. Personalized. Reliable.Manage your diabetes journey with AI-powered tools.</p>
+            <a href="#predict" class="btn btn-custom">Start Prediction  <i class="ri-arrow-right-line"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- Prediction Section -->
+<section class="section" id="predict">
+    <div class="container">
+        <h2 class="text-center mb-5">Smart Prediction System</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-10 feature-card">
+                <div class="row align-items-center">
+                    <div class="col-md-2 text-center">
+                        <i class="fas fa-brain icon" title="AI Powered"></i>
+                    </div>
+                    <div class="col-md-10">
+                        <p>Our AI model uses advanced algorithms to instantly assess diabetes risk based on key health metrics such as glucose levels, BMI, age, and insulin history.</p>
+                        <ul>
+                            <li>Fast and Accurate Predictions</li>
+                            <li>Privacy-Focused & Secure</li>
+                            <li>Easy-to-Use Interface</li>
+                        </ul>
+                        <a href="/predict" class="btn btn-primary mt-3">Go to Prediction</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Diet Plans Section -->
+<section class="section bg-light" id="diet">
+    <div class="container">
+        <h2 class="text-center mb-5">Personalized Diet Plans</h2>
+        <div class="row">
+            <!-- Diabetic Vegetarian -->
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-leaf icon"></i>
+                    <h5>Diabetic - Vegetarian</h5>
+                    <p>A low-GI, fiber-rich meal plan designed to stabilize blood sugar.</p>
+                    <ul>
+                        <li>Oats with chia and berries for breakfast</li>
+                        <li>Quinoa salad with tofu and greens</li>
+                        <li>Moong dal with sautéed vegetables and millet roti</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Diabetic Non-Vegetarian -->
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-egg icon"></i>
+                    <h5>Diabetic - Non-Vegetarian</h5>
+                    <p>Lean proteins and complex carbs for optimal glucose control.</p>
+                    <ul>
+                        <li>Boiled egg and avocado toast</li>
+                        <li>Grilled chicken with stir-fried vegetables</li>
+                        <li>Fish curry with brown rice</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Pre-Diabetic Vegetarian -->
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-carrot icon"></i>
+                    <h5>Pre-Diabetic - Vegetarian</h5>
+                    <p>Plant-based, nutrient-rich meals to reverse insulin resistance.</p>
+                    <ul>
+                        <li>Vegetable upma with flaxseeds</li>
+                        <li>Lentil soup and cucumber salad</li>
+                        <li>Stuffed bell peppers with whole grains</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Pre-Diabetic Non-Vegetarian -->
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-drumstick-bite icon"></i>
+                    <h5>Pre-Diabetic - Non-Vegetarian</h5>
+                    <p>Meals balanced with lean protein, fiber, and slow-release carbs.</p>
+                    <ul>
+                        <li>Boiled egg with multigrain toast</li>
+                        <li>Turkey breast wrap with hummus</li>
+                        <li>Grilled fish with steamed vegetables</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Non-Diabetic Vegetarian -->
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-seedling icon"></i>
+                    <h5>Non-Diabetic - Vegetarian</h5>
+                    <p>Balanced nutrition to maintain healthy metabolism.</p>
+                    <ul>
+                        <li>Fruit smoothie with plant protein</li>
+                        <li>Chickpea salad with mixed greens</li>
+                        <li>Vegetable biryani with raita</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Non-Diabetic Non-Vegetarian -->
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-fish icon"></i>
+                    <h5>Non-Diabetic - Non-Vegetarian</h5>
+                    <p>Nutrient-dense and satisfying for active lifestyles.</p>
+                    <ul>
+                        <li>Omelet with spinach and tomatoes</li>
+                        <li>Chicken and avocado salad</li>
+                        <li>Egg curry with brown rice</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Exercise Plans Section -->
+<section class="section bg-light" id="exercise">
+    <div class="container">
+        <h2 class="text-center mb-5">Personalized Exercise Plans</h2>
+        <div class="row">
+            <!-- Diabetic Exercises -->
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-dumbbell icon"></i>
+                    <h5>Diabetic - Exercises</h5>
+                    <p>Strength training and low-impact cardio for glucose control.</p>
+                    <ul>
+                        <li>Brisk walking</li>
+                        <li>Yoga for relaxation</li>
+                        <li>Strength training (3x per week)</li>
+                    </ul>
+                    <a href="/exercise/diabetic" class="btn btn-primary mt-3">View Full Plan</a>
+                </div>
+            </div>
+            <!-- Pre-Diabetic Exercises -->
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-running icon"></i>
+                    <h5>Pre-Diabetic - Exercises</h5>
+                    <p>Exercises to boost metabolism and maintain insulin sensitivity.</p>
+                    <ul>
+                        <li>Jogging for 30 minutes</li>
+                        <li>Circuit training</li>
+                        <li>Strength and flexibility exercises</li>
+                    </ul>
+                    <a href="/exercise/pre-diabetic" class="btn btn-primary mt-3">View Full Plan</a>
+                </div>
+            </div>
+            <!-- Non-Diabetic Exercises -->
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-bicycle icon"></i>
+                    <h5>Non-Diabetic - Exercises</h5>
+                    <p>Balanced exercise regimen for fitness and endurance.</p>
+                    <ul>
+                        <li>Cycling for 45 minutes</li>
+                        <li>Strength training (4x per week)</li>
+                        <li>HIIT (High-Intensity Interval Training)</li>
+                    </ul>
+                    <a href="/exercise/non-diabetic" class="btn btn-primary mt-3">View Full Plan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- awareness -->
+<section class="section bg-light py-5" id="awareness">
+    <div class="container">
+        <h2 class="text-center fw-bold display-5 mb-4 animate__animated animate__fadeInDown">Diabetes Awareness Hub</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-10 text-center">
+                <i class="fas fa-heartbeat text-danger fa-3x mb-4 animate__animated animate__bounceIn"></i>
+                <p class="lead text-secondary mb-4 animate__animated animate__fadeInUp">
+                    Stay informed with the latest updates, bust common myths, and explore expert-backed tips for diabetes prevention, management, and a healthier lifestyle.
+                </p>
+                
+                <div class="ratio ratio-16x9 mb-3 animate__animated animate__fadeIn">
+                    <iframe src="https://www.youtube.com/embed/a62w48ouSYk"  
+                            title="Diabetes Education" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen 
+                            loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Contact -->
+<section class="section bg-light py-5" id="contact">
+    <div class="container1">
+        <h2 class="text-center mb-4">Contact Us</h2>
+        <p class="text-center mb-5">We’d love to hear from you. Contact us through any of the following ways:</p>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="contact-box p-4 text-center shadow-sm bg-white rounded">
+                    <i class="fas fa-envelope fa-2x mb-3 text-primary"></i>
+                    <h5>Email</h5>
+                    <p><a href="mailto:support@example.com">diabeticspro@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="contact-box p-4 text-center shadow-sm bg-white rounded">
+                    <i class="fas fa-phone fa-2x mb-3 text-primary"></i>
+                    <h5>Phone</h5>
+                    <p>+919348501077</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="contact-box p-4 text-center shadow-sm bg-white rounded">
+                    <i class="fas fa-map-marker-alt fa-2x mb-3 text-primary"></i>
+                    <h5>Address</h5>
+                    <p>Berhumpur,Parala Maharaja Engineering College</p>
+                </div>
+            </div>
+            <div class="col-12 mt-4 text-center">
+                <a href="https://facebook.com/example" class="me-3 text-decoration-none text-dark" target="_blank">
+                    <i class="fab fa-facebook fa-lg"></i>
+                </a>
+                <a href="https://twitter.com/example" class="me-3 text-decoration-none text-dark" target="_blank">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a href="https://linkedin.com/company/example" class="text-decoration-none text-dark" target="_blank">
+                    <i class="fab fa-linkedin fa-lg"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Diabetes Pro. All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Botpress Chatbot Embed -->
+<script src="https://cdn.botpress.cloud/webchat/v2.4/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2025/04/22/08/20250422085548-OC34S5DQ.js"></script>
+
+<!-- Floating Chat Button -->
+
+</body>
+</html>

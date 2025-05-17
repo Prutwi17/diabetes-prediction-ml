@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('back_bone-Picsart-AiImageEnhancer.png') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            background-image: url(static/bg-image4.png)
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 15px;
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+            color: #000;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+        }
+
+        .form-control, .form-select {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            color: #000;
+        }
+
+        .form-control::placeholder {
+            color: #555;
+        }
+
+        .form-control:focus, .form-select:focus {
+            background: rgba(255, 255, 255, 1);
+            color: #000;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+        }
+
+        .btn-primary {
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        h2 {
+            color: #000;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        label {
+            margin-top: 12px;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Diabetes Prediction </h2>
+    <form method="POST" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label>Gender</label>
+            <select class="form-select" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Age</label>
+            <input type="number" class="form-control" name="age" placeholder="Enter age" required min="1" max="120">
+        </div>
+
+        <div class="form-group">
+            <label>Hypertension (0 = No, 1 = Yes)</label>
+            <select class="form-select" name="hypertension" required>
+                <option value="">Select</option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Heart Disease (0 = No, 1 = Yes)</label>
+            <select class="form-select" name="heart_disease" required>
+                <option value="">Select</option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Smoking History</label>
+            <select class="form-select" name="smoking_history" required>
+                <option value="">Select</option>
+                <option value="never">Never</option>
+                <option value="former">Former</option>
+                <option value="current">Current</option>
+                <option value="not known">Not Known</option>
+                <option value="ever">Ever</option>
+                <option value="no info">No Info</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>BMI</label>
+            <input type="number" step="0.1" class="form-control" name="bmi" placeholder="Enter BMI" required min="10" max="60">
+        </div>
+
+        <div class="form-group">
+            <label>HbA1c Level</label>
+            <input type="number" step="0.1" class="form-control" name="hba1c_level" placeholder="Enter HbA1c Level" required min="3.5" max="14">
+        </div>
+
+        <div class="form-group">
+            <label>Blood Glucose Level</label>
+            <input type="number" step="0.1" class="form-control" name="blood_glucose" placeholder="Enter Blood Glucose Level" required min="40" max="500">
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-4 w-100">Predict</button>
+    </form>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JS validation -->
+<script>
+function validateForm() {
+    const age = parseFloat(document.querySelector('[name="age"]').value);
+    const bmi = parseFloat(document.querySelector('[name="bmi"]').value);
+    const hba1c = parseFloat(document.querySelector('[name="hba1c_level"]').value);
+    const glucose = parseFloat(document.querySelector('[name="blood_glucose"]').value);
+
+    if (age < 1 || age > 120) {
+        alert("Age must be between 1 and 120.");
+        return false;
+    }
+    if (bmi < 10 || bmi > 60) {
+        alert("BMI must be between 10 and 60.");
+        return false;
+    }
+    if (hba1c < 3.5 || hba1c > 14) {
+        alert("HbA1c must be between 3.5 and 14.");
+        return false;
+    }
+    if (glucose < 40 || glucose > 500) {
+        alert("Blood glucose must be between 40 and 500.");
+        return false;
+    }
+    return true;
+}
+</script>
+
+</body>
+</html>

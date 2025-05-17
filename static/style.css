@@ -1,0 +1,89 @@
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-image: url(bg-image5.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1000px;
+    background-color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    
+  }
+  
+  .form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  form {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+  }
+  
+  input {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  button {
+    background-color: #0066cc;
+    color: white;
+    padding: 12px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  
+  button:hover {
+    background-color: #004999;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #0066cc;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .side-image {
+    width: 50%;
+    object-fit: cover;
+  }
+  .google-button {
+    display: inline-block;
+    background-color: #db4437;
+    color: white;
+    padding: 10px 16px;
+    margin-top: 10px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  .google-button:hover {
+    background-color: #c23321;
+  }
+    

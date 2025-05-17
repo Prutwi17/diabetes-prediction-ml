@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction History</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .badge-non-diabetic {
+            background-color: #28a745; /* Green */
+        }
+        .badge-pre-diabetic {
+            background-color: #fd7e14; /* Orange */
+        }
+        .badge-diabetic {
+            background-color: #dc3545; /* Red */
+        }
+        body {
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4 text-center">Prediction History</h1>
+
+        {% if history %}
+            <div class="list-group">
+                {% for item in history %}
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                        {% if item.prediction == 'Non-Diabetic' %}
+                            <span class="badge badge-non-diabetic p-2">{{ item.prediction }}</span>
+                        {% elif item.prediction == 'Pre-Diabetic' %}
+                            <span class="badge badge-pre-diabetic p-2">{{ item.prediction }}</span>
+                        {% elif item.prediction == 'Diabetic' %}
+                            <span class="badge badge-diabetic p-2">{{ item.prediction }}</span>
+                        {% else %}
+                            <span class="badge bg-secondary p-2">{{ item.prediction }}</span>
+                        {% endif %}
+                        <small class="text-muted">{{ item.timestamp }}</small>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="text-center mt-4">
+                <!-- Form to delete history -->
+                <form id="delete-form" action="{{ url_for('delete_history') }}" method="POST" style="display: none;"></form>
+                
+                <!-- Delete button with animation -->
+                <button onclick="confirmDelete()" class="btn btn-danger">Delete History</button>
+                <a href="{{ url_for('home') }}" class="btn btn-primary">Back to Home</a>
+            </div>
+        {% else %}
+            <div class="alert alert-info text-center">No prediction history available.</div>
+            <div class="text-center">
+                <a href="{{ url_for('home') }}" class="btn btn-primary">Back to Home</a>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- SweetAlert2 Library -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Delete history animation -->
+    <script>
+    function confirmDelete() {
+        Swal.fire({
+            title: 'Deleting History...',
+            html: `
+                <div class="spinner-border text-danger" role="status" style="width: 4rem; height: 4rem;">
+                  <span class="sr-only">Loading...</span>
+                </div>
+                <p class="mt-3">Please wait...</p>
+            `,
+            showConfirmButton: false,
+            allowOutsideClick: false,
+            didOpen: () => {
+                Swal.showLoading();
+            }
+        });
+
+        setTimeout(function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Deleted!',
+                text: 'Your history has been successfully deleted.',
+                showConfirmButton: false,
+                timer: 1500,
+                timerProgressBar: true
+            });
+
+            setTimeout(function() {
+                document.getElementById('delete-form').submit();
+            }, 1600); // Submit after success
+        }, 1500); // Wait during loading
+    }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In / Sign Up</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <img src="{{ url_for('static', filename='doctor1.png') }}" alt="Medical" />
+    </div>
+    <div class="right-panel">
+      <div class="form-box">
+        <div class="tab-switch">
+          <button id="signUpBtn" class="active">Sign Up</button>
+          <button id="signInBtn">Sign In</button>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <form method="POST" id="signForm">
+          <input type="hidden" name="action" id="formAction" value="signup" />
+          <div class="form-group" id="nameField">
+            <input type="text" name="name" placeholder="Full Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" placeholder="Password" required />
+          </div>
+          <div class="form-group">
+            <a href="#" class="forgot-password">Forgot Password?</a>
+          </div>
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        <div class="google-btn">
+          <button>Sign in with Google</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  const signUpBtn = document.getElementById('signUpBtn');
+  const signInBtn = document.getElementById('signInBtn');
+  const nameField = document.getElementById('nameField');
+  const formAction = document.getElementById('formAction');
+
+  signUpBtn.onclick = () => {
+    nameField.style.display = "block";
+    formAction.value = "signup";
+    signUpBtn.classList.add("active");
+    signInBtn.classList.remove("active");
+  };
+
+  signInBtn.onclick = () => {
+    nameField.style.display = "none";
+    formAction.value = "signin";
+    signInBtn.classList.add("active");
+    signUpBtn.classList.remove("active");
+  };
+</script>
+</body>
+</html>
